@@ -16,10 +16,12 @@ public abstract class Shape implements Cloneable {
 
     @Override
     protected Object clone(){
+        Object clone = null;
         try {
-            return super.clone();
+            clone = super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return clone;
     }
 }
