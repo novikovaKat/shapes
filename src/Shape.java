@@ -1,25 +1,8 @@
-public abstract class Shape implements Cloneable {
-    protected String id;
-    protected String type;
+public abstract class Shape {
+   protected DrawingAPI drawingAPI;
 
-    public String getId() {
-        return id;
+    public Shape(DrawingAPI drawingAPI) {
+        this.drawingAPI = drawingAPI;
     }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    @Override
-    protected Object clone(){
-        try {
-            return super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    public abstract void draw();
 }
